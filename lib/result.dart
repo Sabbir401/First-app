@@ -27,10 +27,23 @@ class Result extends StatelessWidget {
         children: [
           Text(
             resultPhrase,
-            style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold), textAlign: TextAlign.center,
+            style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
+            textAlign: TextAlign.center,
           ),
-          ElevatedButton(child: Text('Restart Quiz!'),
-          onPressed: resetHandler,)
+          ElevatedButton(
+            style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all(Colors.red),
+                foregroundColor: MaterialStateProperty.all(Colors.black)),
+            // style: ElevatedButton.styleFrom(primary: Colors.orange, onPrimary: Colors.blue), // Alternative way
+            child: Text('Restart Quiz!'),
+            onPressed: resetHandler,
+          ),
+          TextButton(
+              child: Text('A Text Button'),
+              style: TextButton.styleFrom(primary: Colors.orange),
+              onPressed: () {
+                print('pressed textButton');
+              })
         ],
       ),
     );
